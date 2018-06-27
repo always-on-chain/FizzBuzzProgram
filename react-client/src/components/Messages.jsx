@@ -7,7 +7,7 @@ const Messages = (props) => {
         Current Number is {props.currentNumber}
       </div>
       <div id="messages-fizz-bizz">
-        Fizz
+        {props.fizzBuzz}
       </div>
     </div>
   )

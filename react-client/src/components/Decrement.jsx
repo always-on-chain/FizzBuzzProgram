@@ -3,7 +3,7 @@ import React from 'react';
 const Decrement = (props) => {
   return (
     <div id="decrement">
-      <a class="waves-effect waves-light btn-large">Decrease</a>
+      <a className="waves-effect waves-light btn-large pink lighten-4 buttons">Decrease</a>
     </div>
   )
 }

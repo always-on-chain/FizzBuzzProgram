@@ -3,7 +3,7 @@ import React from 'react';
 const Increment = (props) => {
   return (
     <div id="increment">
-      <a class="waves-effect waves-light btn-large">Increase</a>
+      <a className="waves-effect waves-light btn-large pink lighten-4 buttons">Increase</a>
     </div>
   )
 }
