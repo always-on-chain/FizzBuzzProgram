@@ -8,15 +8,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentNumber: 1,
-      fizzBuzz: 'null'
+      currentNumber: this.randomizeStartNumber(1, 100),
+      fizzBuzz: 'null',
     }
+
+    this.onClick = this.onClick.bind(this);
   }
 
   determineFizzBuzz() {
-    let currentNumber = this.randomizeStartNumber(1, 100);
-
-    console.log('currentNumber', currentNumber)
+    let currentNumber = this.state.currentNumber;
 
     if (currentNumber % 3 === 0 && currentNumber % 5 === 0) {
       this.setState({
@@ -48,16 +48,38 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.randomizeStartNumber(1, 100);
     this.determineFizzBuzz();
+  }
+
+  onClick(type) {
+    let currentNumber;
+    if (type === 'decrement') {
+      if (this.state.currentNumber === 1) {
+        alert('You can only increase from here!')
+        currentNumber = this.state.currentNumber;
+      } else {
+        currentNumber = this.state.currentNumber - 1;
+      }
+    } else {
+      if (this.state.currentNumber === 100) {
+        alert('You can only decrease from here!')
+        currentNumber = this.state.currentNumber;
+      } else {
+        currentNumber = this.state.currentNumber + 1;
+      }
+    }
+
+    this.setState({
+      currentNumber: currentNumber
+    }, ()=> {this.determineFizzBuzz()})
   }
   
   render() {
     return (
       <div id="interface">
         <Messages currentNumber={this.state.currentNumber} fizzBuzz={this.state.fizzBuzz} />
-        <Decrement currentNumber={this.state.currentNumber} />
-        <Increment currentNumber={this.state.currentNumber} />
+        <Decrement currentNumber={this.state.currentNumber} onClick={this.onClick} />
+        <Increment currentNumber={this.state.currentNumber} onClick={this.onClick} />
       </div>
     )
   }

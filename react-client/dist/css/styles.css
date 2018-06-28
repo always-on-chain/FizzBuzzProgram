@@ -1,4 +1,8 @@
-.buttons {
+.buttons, #amount {
   height: 25%;
   width: 25%;
+}
+
+#amount-current {
+  width: 200%;
 }
