@@ -1,8 +1,51 @@
-.buttons, #amount {
-  height: 25%;
-  width: 25%;
+
+header {
+  border-bottom: 1px purple solid;
+  width: 35%;
+  margin: auto;
+}
+
+body, header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+
+body {
+  font-size: 160%;
+}
+
+#messages {
+  margin-top: 5%;
+}
+
+.buttons {
+  width: 15%;
+  border-radius: 4%;
+  margin-top: 1%;
 }
 
 #amount-current {
   width: 200%;
+}
+
+@media (min-width: 0px) and (max-width: 730px) {
+  header {
+    width: 70%;
+  }
+  #messages {
+    margin-top: 10%;
+  }
+  .buttons {
+    width: 32%;
+  }
+}
+
+@media (min-width: 730px) and (max-width: 1270px) {
+  header {
+    width: 48%;
+  }
+  .buttons {
+    width: 18%
+  }
 }
